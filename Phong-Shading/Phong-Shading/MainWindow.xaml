@@ -5,20 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Phong_Shading"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1000" Width="1500"
+        Title="MainWindow" Height="1000" Width="1000"
         KeyDown="KeyStrokeDown" WindowStartupLocation="CenterScreen">
+
     <Grid Margin="0,0,-31,-21">
         <Grid.RowDefinitions>
             <RowDefinition Height="649*"/>
             <RowDefinition Height="320*"/>
         </Grid.RowDefinitions>
-        <Canvas Name="MyCanvas" Background="Black" Margin="0,0,28,10" Grid.RowSpan="2"/>
-        <Label Foreground="RosyBrown" FontSize="20">
+        <StackPanel Name="Icon" Margin="0,0,28,10" Grid.RowSpan="2"/>
+        <ComboBox Name="Combo"  Margin="10,123,879,512" Panel.ZIndex="100" SelectionChanged="Combo_SelectionChanged">
+            <ComboBoxItem>Metallic Surface</ComboBoxItem>
+            <ComboBoxItem>Wooden Surface</ComboBoxItem>
+            <ComboBoxItem>Mixed Surface</ComboBoxItem>
+        </ComboBox>
+        <Label Foreground="RosyBrown" FontSize="20" Width="415" Height="120" HorizontalAlignment="Left" VerticalAlignment="Top">
             <TextBlock>
                 Controls: (The light source moves) <LineBreak/>  
                 WASD - movement up/down/right/left <LineBreak/>
                 E and Q - movement forward and backwards <LineBreak/>
+                Choose sphere surface:
             </TextBlock>
         </Label>
+        
     </Grid>
+
 </Window>
