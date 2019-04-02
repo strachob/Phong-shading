@@ -42,9 +42,9 @@ namespace Phong_Shading
             shadingOperator = new ShadingOperator();
             surface = new Surface
             {
-                KDirectional = 0.25,
-                KScattered = 0.75,
-                Smoothness = 5
+                KSpecular = 0.25,
+                KDiffuse = 0.75,
+                Shininess = 5
             };
             Combo.SelectedIndex = 0;
         }
@@ -87,23 +87,23 @@ namespace Phong_Shading
         {
             if (Combo.SelectedIndex == 0)
             {
-                surface.KDirectional = 0.25;
-                surface.KScattered = 0.75;
-                surface.Smoothness = 5;
+                surface.KSpecular = 0.4;
+                surface.KDiffuse = 0.77;
+                surface.Shininess = 50;
                 SetNewIcon();
             }
             else if (Combo.SelectedIndex == 1)
             {
-                surface.KDirectional = 0.75;
-                surface.KScattered = 0.25;
-                surface.Smoothness = 100;
+                surface.KSpecular = 0.75;
+                surface.KDiffuse = 0.25;
+                surface.Shininess = 100;
                 SetNewIcon();
             }
             else if (Combo.SelectedIndex == 2)
             {
-                surface.KDirectional = 0.5;
-                surface.KScattered = 0.5;
-                surface.Smoothness = 10;
+                surface.KSpecular = 0.5;
+                surface.KDiffuse = 0.5;
+                surface.Shininess = 10;
                 SetNewIcon();
             }
         }

@@ -52,8 +52,8 @@ namespace Phong_Shading.Operations
         private double CalculateLightReflection(Surface surface, double scalar, double cosAlpha, Models.Point point)
         {
             return SurroundIntsity * KSurround
-                    + Fatt(point) * PointIntensity * surface.KScattered * scalar
-                    + Fatt(point) * PointIntensity * surface.KDirectional * Math.Pow(cosAlpha, surface.Smoothness);
+                    + Fatt(point) * PointIntensity * surface.KDiffuse * scalar
+                    + Fatt(point) * PointIntensity * surface.KSpecular * Math.Pow(cosAlpha, surface.Shininess);
         }
 
         private static Models.Point ComputeZ(int x, int y)
@@ -118,23 +118,21 @@ namespace Phong_Shading.Operations
                     var pixelColor = lockBitmap.GetPixel(j, i);
 
                     if (pixelColor != Color.Black)
-                    {
-                        //Cieniowanie Phonga
-                        //Wyznaczamy wierzchołek
+                    {                       
                         var point = ComputeZ(i - 250, j - 250);
-                        //Obliczony punkt przekształcamy na wektor
+                       
                         var l = point.ToVector();
-                        //Normalizujemy obliczony wektor
+                        
                         l.Normalize();
-                        //Od źródła odejmujemy obliczony punkt i normalizujemy powstały wektor
+                        
                         var n = ComputeVector(point, LightSource);
                         n.Normalize();
 
-                        //Model odbicia Phonga
+                        
                         var I = CalculateLightReflection(surface, Scalar(n, l),
                                     CalculateCosAlpha(ComputeVector(LightSource, point), l), point);
 
-                        //Obliczanie nowych kolorów
+                        
                         var red = Check(pixelColor.R + I);
                         var green = Check(pixelColor.G + I);
                         var blue = Check(pixelColor.B + I);

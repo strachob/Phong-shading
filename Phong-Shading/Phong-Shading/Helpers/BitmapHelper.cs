@@ -130,10 +130,10 @@ namespace Phong_Shading.Helpers
 
         public void SetPixel(int x, int y, System.Drawing.Color color)
         {
-            // Get color components count
+           
             int cCount = Depth / 8;
 
-            // Get start index of the specified pixel
+            
             int i = ((y * Width) + x) * cCount;
 
             if (Depth == 32) // For 32 bpp set Red, Green, Blue and Alpha

@@ -14,10 +14,10 @@
             <RowDefinition Height="320*"/>
         </Grid.RowDefinitions>
         <StackPanel Name="Icon" Margin="0,0,28,10" Grid.RowSpan="2"/>
-        <ComboBox Name="Combo"  Margin="10,123,879,512" Panel.ZIndex="100" SelectionChanged="Combo_SelectionChanged">
+        <ComboBox Name="Combo"  Margin="10,123,845,512" Panel.ZIndex="100" SelectionChanged="Combo_SelectionChanged">
             <ComboBoxItem>Metallic Surface</ComboBoxItem>
-            <ComboBoxItem>Wooden Surface</ComboBoxItem>
-            <ComboBoxItem>Mixed Surface</ComboBoxItem>
+            <ComboBoxItem>Wooden Surface (Matt)</ComboBoxItem>
+            <ComboBoxItem>Intermidiete Surface</ComboBoxItem>
         </ComboBox>
         <Label Foreground="RosyBrown" FontSize="20" Width="415" Height="120" HorizontalAlignment="Left" VerticalAlignment="Top">
             <TextBlock>

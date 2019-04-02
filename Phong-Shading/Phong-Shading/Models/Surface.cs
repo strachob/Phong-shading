@@ -8,8 +8,8 @@ namespace Phong_Shading.Models
 {
     public class Surface
     {
-        public double KDirectional { get; set; }
-        public double KScattered { get; set; }
-        public double Smoothness { get; set; }
+        public double KSpecular { get; set; }
+        public double KDiffuse { get; set; }
+        public double Shininess { get; set; }
     }
 }
